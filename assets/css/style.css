@@ -2,6 +2,7 @@
 #main {
     font-size: 5rem;
     margin-top: 10vh;
+    margin-bottom: 10vh;
     height: 80vh;
     width: 80%;
     background-color: #f3f5f5;
@@ -9,16 +10,17 @@
     border-radius: 5px;
 }
 
-h1 {
+p {
     padding: 5%;
     color: #334251;
+    font-size: 3vw;
     font-family: 'Fjalla One';
 }
 
 #user {
     width: 60%;
-    height: 80px;
-    font-size: 2rem;
+    height: 6.5vh;
+    font-size: 2.2vw;
     font-family: 'Fjalla One';
     color: #334251;
     text-align: center;
