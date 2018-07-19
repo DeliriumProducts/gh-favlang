@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+img {
+    height: auto;
+    margin-top: 5%;
+    max-width: 20%;
+}
+
 svg {
     margin-top: 5%;
     max-width: 20%;
