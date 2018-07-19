@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-     <img width="256" height="256" src=images/ghfavlang.svg/>
+     <img width="256" height="256" src=images/ghfavlangreadme.svg/>
   <br>
   GitHub Favorite Language
   <br>
