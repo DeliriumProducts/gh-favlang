@@ -7,9 +7,6 @@
   <br>
 </h1>
 
-
-## gh-favlang
-
  Ever wondered what is someone's favorite programming language?
 This tool determines what is the given user favorite programming language based on the top most used language in his GitHub repos.
  
