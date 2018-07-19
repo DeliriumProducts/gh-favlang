@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
     <script src="assets/js/main.js"></script>
     <link rel="stylesheet" href="assets/css/style.css?ver=1.2">
@@ -31,18 +30,24 @@
     <main>
         <div class="container text-center" id="main">
             <div>
-                <img src="images/ghfavlang.svg" class="svg" id="logo"></img>
+                <img src="images/ghfavlang.svg" class="svg responsive-img" id="logo"></img>
             </div>
-            <p id="main-text">Find your favorite coding language!</p>
+
+            <p class="lang-color-secondary" id="main-text">
+                Find your favorite coding language!
+            </p>
+
             <div class="container text-center">
-                <input type="text" class="form-control" id="user" placeholder="Enter GitHub user!">
+                <input type="text" class="form-control lang-color-secondary" id="user" placeholder="Enter GitHub user!">
                 <button class="btn" id="search">
                     Search!
                     <i class="fas fa-search"></i>
                 </button>
-                <div id="profile">
-                    
-                </div>
+            </div>
+
+            <div id="profile">
+                <img class="responsive-img" id="avatar">
+                <p class="lang-color-secondary" id="username"></p>
             </div>
         </div>
     </main>
