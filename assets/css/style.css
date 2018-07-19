@@ -10,17 +10,23 @@
     border-radius: 5px;
 }
 
+img{
+    margin-top: 5%;
+    max-width: 20%;
+    height:auto;
+}
+
 p {
     padding: 5%;
     color: #334251;
-    font-size: 3vw;
+    font-size: 3.5rem;
     font-family: 'Fjalla One';
 }
 
 #user {
     width: 60%;
     height: 6.5vh;
-    font-size: 2.2vw;
+    font-size: 1.9rem;
     font-family: 'Fjalla One';
     color: #334251;
     text-align: center;
