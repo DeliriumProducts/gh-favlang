@@ -1,7 +1,12 @@
- # GitHub Favorite Language
-<p align="center">
-  <img width="200" height="200" src="https://i.imgur.com/iMLsHHR.png">
-</p>
+<h1 align="center">
+  <br>
+     <img width="200" height="200" src="https://i.imgur.com/iMLsHHR.png">
+  <br>
+  GitHub Favorite Language
+  <br>
+  <br>
+</h1>
+
 
 ## gh-favlang
 
