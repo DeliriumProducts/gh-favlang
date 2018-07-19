@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
-img {
+svg {
     margin-top: 5%;
     max-width: 20%;
     height: auto;
@@ -8,7 +8,7 @@ img {
 p {
     padding: 5%;
     color: #334251;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-family: 'Fjalla One';
 }
 
@@ -46,7 +46,6 @@ input[type=text]:focus {
 }
 
 #search {
-    /* width: 10vw; */
     font-size: 1.25rem;
     color: #ebebeb;
     background-color: #425568;
