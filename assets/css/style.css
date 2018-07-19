@@ -1,19 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
-#main {
-    font-size: 5rem;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    height: 80vh;
-    width: 80%;
-    background-color: #f3f5f5;
-    box-shadow: 0 0 8px #334251;
-    border-radius: 5px;
-}
-
-img{
+img {
     margin-top: 5%;
     max-width: 20%;
-    height:auto;
+    height: auto;
 }
 
 p {
@@ -23,10 +12,26 @@ p {
     font-family: 'Fjalla One';
 }
 
+input[type=text]:focus {
+    box-shadow: 0 0 10px #334251 !important;
+    border: 1px solid #334251 !important;
+}
+
+#main {
+    font-size: 5rem;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    width: 80%;
+    background-color: #f3f5f5;
+    box-shadow: 0 0 8px #334251;
+    border-radius: 5px;
+    padding-bottom: 5%;
+}
+
 #user {
     width: 60%;
     height: 6.5vh;
-    font-size: 1.9rem;
+    font-size: 2vw;
     font-family: 'Fjalla One';
     color: #334251;
     text-align: center;
@@ -35,12 +40,14 @@ p {
     margin-left: auto;
 }
 
-input[type=text]:focus {
-    box-shadow: 0 0 10px #334251 !important;
-    border: 1px solid #334251 !important;
-  }
-
-#user::placeholder { 
+#user::placeholder {
     color: #000000b2;
-    opacity: 0.5; 
+    opacity: 0.5;
+}
+
+#search {
+    /* width: 10vw; */
+    font-size: 1.25rem;
+    color: #ebebeb;
+    background-color: #425568;
 }

@@ -9,6 +9,8 @@
         crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
     <link rel="stylesheet" href="assets/css/style.css?ver=1.1">
@@ -16,15 +18,26 @@
 </head>
 
 <body>
-    <div class="container text-center" id="main">
-        <div class="logo">
-            <img src="images/ghfavlang.svg">
+    <main>
+        <div class="container text-center" id="main">
+            <div>
+                <img src="images/ghfavlang.svg" id="logo">
+            </div>
+            <p>Find your favorite programming language!</p>
+            <div class="container text-center">
+                <input type="text" class="form-control" id="user" placeholder="Enter GitHub user!">
+                <button class="btn" id="search">
+                    Search! 
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
         </div>
-        <p>Find your favorite programming language!</p>
-        <div class="container text-center">
-            <input type="text" class="form-control" id="user" placeholder="Enter GitHub user!">
-        </div>
-    </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
 </body>
 
 </html>
