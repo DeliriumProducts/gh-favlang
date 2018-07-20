@@ -1,3 +1,4 @@
+
 $(document).ready(() => {
 
     // INSTANCES OF DOM ELEMENTS
@@ -12,12 +13,14 @@ $(document).ready(() => {
     // EVENTS
     $('#search').click(async () => {
         const user = userInput.val();
+        const colors = await $.getJSON('../../colors.json');
         let languages = [];
 
         const userData = await requestUser(user);
         avatarImg.attr('src', userData.avatar_url);
         const reposData = await requestRepos(user);
 
+        // GETTING THE TOP MOST USED LANGUAGE IN EACH REPO
         for (const repo of reposData) {
             if (repo.fork == false) {
                 let language = repo.language;
@@ -33,14 +36,18 @@ $(document).ready(() => {
             }
         }
 
+        // SORTING THE LANG ARRAY BY DESCENDING
         languages = languages.sort((a, b) => {
             let first = Object.values(a);
             let second = Object.values(b);
             return second - first;
         });
-
-        userP.text(userData.name ? userData.name : userData.login);
-        animations(profileDiv);
+        let topLangugage = Object.keys(languages[0]);
+        let primaryColor = colors[topLangugage].color;
+        let secondaryColor = chroma(primaryColor);
+        secondaryColor = secondaryColor.darken().saturate(2).hex();
+        userP.text(userData.name ? userData.name : userData.login); // check if user has available public profile name and display it otherwise display username
+        animations(profileDiv,primaryColor,secondaryColor);
     })
 });
 
@@ -60,27 +67,27 @@ const animations = (profileDiv, primaryColor, secondaryColor) => {
     // PRIMARY
     anime({
         targets: ".lang-color-primary",
-        fill: '#701516',
-        color: '#701516',
+        fill: primaryColor,
+        color: primaryColor,
         easing: 'easeOutQuart'
     });
     anime({
         targets: "body",
-        backgroundColor: '#701516',
+        backgroundColor: primaryColor,
         easing: 'easeOutQuart'
     });
 
     // SECONDARY
     anime({
         targets: ".btn",
-        backgroundColor: '#601415',
-        boxShadow: '0 0 10px #601415',
+        backgroundColor: secondaryColor,
+        boxShadow: '0 0 10px ' + secondaryColor,
         easing: 'easeOutQuart'
     });
     anime({
         targets: ".lang-color-secondary",
-        fill: '#601415',
-        color: '#601415',
+        fill: secondaryColor,
+        color: secondaryColor,
         easing: 'easeOutQuart'
     });
 
