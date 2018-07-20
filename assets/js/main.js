@@ -122,7 +122,7 @@ const animations = (profileDiv, primaryColor, secondaryColor) => {
     profileDiv.slideDown(250);
 };
 
-Array.prototype.findKeyInArray = (arr, key) => {
+Array.prototype.findKeyInArray = (key) => {
     for (let i = 0; i < this.length; i++) {
         if (this[i].hasOwnProperty(key)) {
             return i;
