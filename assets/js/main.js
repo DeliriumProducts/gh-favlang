@@ -40,7 +40,7 @@ $(document).ready(() => {
                         if (language === null) {
                             continue;
                         }
-                        let index = findKeyInArray(languages, language);
+                        let index = languages.findKeyInArray(language);
                         if (index != undefined) {
                             languages[index][language]++;
                         } else {
@@ -62,7 +62,7 @@ $(document).ready(() => {
                     secondaryColor = chroma(primaryColor).darken(0.25).hex();
                 }
                 let name = userData.name ? userData.name : userData.login; // check if user has available public profile name and display it otherwise display username
-                userP.text(name); 
+                userP.text(name);
                 avatarA.attr('href', `https://github.com/${user}`);
                 favLangP.html(`<a href="https://github.com/${user}">${user}</a>'s favorite coding language is: <span id="language-span">${topLangugage}</span>`);
                 animations(profileDiv, primaryColor, secondaryColor);
@@ -122,9 +122,9 @@ const animations = (profileDiv, primaryColor, secondaryColor) => {
     profileDiv.slideDown(250);
 };
 
-const findKeyInArray = (arr, key) => {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].hasOwnProperty(key)) {
+Array.prototype.findKeyInArray = (arr, key) => {
+    for (let i = 0; i < this.length; i++) {
+        if (this[i].hasOwnProperty(key)) {
             return i;
         }
     }
