@@ -40,7 +40,7 @@ $(document).ready(() => {
                         if (language === null) {
                             continue;
                         }
-                        let index = languages.findKeyInArray(language);
+                        let index = languages.findKey(language);
                         if (index != undefined) {
                             languages[index][language]++;
                         } else {
@@ -122,7 +122,7 @@ const animations = (profileDiv, primaryColor, secondaryColor) => {
     profileDiv.slideDown(250);
 };
 
-Array.prototype.findKeyInArray = (key) => {
+Array.prototype.findKey = (key) => {
     for (let i = 0; i < this.length; i++) {
         if (this[i].hasOwnProperty(key)) {
             return i;
