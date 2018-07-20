@@ -6,6 +6,7 @@ $(document).ready(() => {
     const avatarImg = $('#avatar');
     const userInput = $('#user');
     const userP = $('#username');
+    const favLangP = $('#fav-lang');
 
     // HIDING PROFILE DIV   
     profileDiv.hide();
@@ -59,7 +60,9 @@ $(document).ready(() => {
                     primaryColor = colors[topLangugage].color;
                     secondaryColor = chroma(primaryColor).darken(0.25).hex();
                 }
-                userP.text(userData.name ? userData.name : userData.login); // check if user has available public profile name and display it otherwise display username
+                let name = userData.name ? userData.name : userData.login;
+                userP.text(name); // check if user has available public profile name and display it otherwise display username
+                favLangP.text(`${user}'s favorite coding language is: ${topLangugage}`);
                 animations(profileDiv, primaryColor, secondaryColor);
                 oldUser = user;
             });
