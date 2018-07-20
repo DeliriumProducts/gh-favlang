@@ -14,7 +14,7 @@ $(document).ready(() => {
     $('#search').click(async () => {
         const user = userInput.val();
         let languages = [];
-        const colors = await $.getJSON('../../colors.json');
+        const colors = await $.getJSON('/assets/js/colors.json');
         let primaryColor = '#425568';
         let secondaryColor = '#334251';
 
@@ -46,11 +46,12 @@ $(document).ready(() => {
         });
 
         let topLangugage = Object.keys(languages[0]);
-        
-        if (colors[topLangugage].color != undefined) {
+
+        if (colors[topLangugage].color != undefined || colors[topLangugage.color != null]) {
             primaryColor = colors[topLangugage].color;
             secondaryColor = chroma(primaryColor).darken().saturate(2).hex();
         }
+
         userP.text(userData.name ? userData.name : userData.login); // check if user has available public profile name and display it otherwise display username
         animations(profileDiv, primaryColor, secondaryColor);
     })
