@@ -1,4 +1,5 @@
 let oldUser = "";
+
 $(document).ready(() => {
 
     // INSTANCES OF DOM ELEMENTS
@@ -55,7 +56,7 @@ $(document).ready(() => {
                     let second = Object.values(b);
                     return second - first;
                 });
-
+                console.log(languages);
                 let topLangugage = Object.keys(languages[0]);
                 if (colors[topLangugage].color != undefined || colors[topLangugage.color != null]) {
                     primaryColor = colors[topLangugage].color;
@@ -122,7 +123,7 @@ const animations = (profileDiv, primaryColor, secondaryColor) => {
     profileDiv.slideDown(250);
 };
 
-Array.prototype.findKey = (key) => {
+Array.prototype.findKey = function(key) {
     for (let i = 0; i < this.length; i++) {
         if (this[i].hasOwnProperty(key)) {
             return i;
