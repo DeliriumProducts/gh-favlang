@@ -18,7 +18,6 @@ $(document).ready(() => {
         avatarImg.attr('src', userData.avatar_url);
         const reposData = await requestRepos(user);
 
-        console.log(reposData);
         for (const repo of reposData) {
             if (repo.fork == false) {
                 let language = repo.language;
@@ -37,11 +36,9 @@ $(document).ready(() => {
         languages = languages.sort((a, b) => {
             let first = Object.values(a);
             let second = Object.values(b);
-            console.log(first, second);
             return second - first;
         });
 
-        console.log(languages);
         userP.text(userData.name ? userData.name : userData.login);
         animations(profileDiv);
     })
@@ -59,7 +56,7 @@ const requestRepos = async (user) => {
     return data;
 };
 
-const animations = (profileDiv) => {
+const animations = (profileDiv, primaryColor, secondaryColor) => {
     // PRIMARY
     anime({
         targets: ".lang-color-primary",
