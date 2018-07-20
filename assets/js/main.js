@@ -13,8 +13,10 @@ $(document).ready(() => {
     // EVENTS
     $('#search').click(async () => {
         const user = userInput.val();
-        const colors = await $.getJSON('../../colors.json');
         let languages = [];
+        const colors = await $.getJSON('../../colors.json');
+        let primaryColor = '#425568';
+        let secondaryColor = '#334251';
 
         const userData = await requestUser(user);
         avatarImg.attr('src', userData.avatar_url);
@@ -42,12 +44,15 @@ $(document).ready(() => {
             let second = Object.values(b);
             return second - first;
         });
+
         let topLangugage = Object.keys(languages[0]);
-        let primaryColor = colors[topLangugage].color;
-        let secondaryColor = chroma(primaryColor);
-        secondaryColor = secondaryColor.darken().saturate(2).hex();
+        
+        if (colors[topLangugage].color != undefined) {
+            primaryColor = colors[topLangugage].color;
+            secondaryColor = chroma(primaryColor).darken().saturate(2).hex();
+        }
         userP.text(userData.name ? userData.name : userData.login); // check if user has available public profile name and display it otherwise display username
-        animations(profileDiv,primaryColor,secondaryColor);
+        animations(profileDiv, primaryColor, secondaryColor);
     })
 });
 
