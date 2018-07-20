@@ -12,6 +12,7 @@ $(document).ready(() => {
 
     // EVENTS
     $('#search').click(async () => {
+        profileDiv.slideUp(500);
         const user = userInput.val();
         let languages = [];
         const colors = window.githubColors;
