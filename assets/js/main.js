@@ -14,7 +14,7 @@ $(document).ready(() => {
     $('#search').click(async () => {
         const user = userInput.val();
         let languages = [];
-        const colors = await $.getJSON('/assets/js/colors.json');
+        const colors = window.githubColors;
         let primaryColor = '#425568';
         let secondaryColor = '#334251';
 
