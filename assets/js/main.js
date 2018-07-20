@@ -3,6 +3,7 @@ $(document).ready(() => {
 
     // INSTANCES OF DOM ELEMENTS
     const profileDiv = $('#profile');
+    const avatarA = $('#avatar-link');
     const avatarImg = $('#avatar');
     const userInput = $('#user');
     const userP = $('#username');
@@ -60,9 +61,10 @@ $(document).ready(() => {
                     primaryColor = colors[topLangugage].color;
                     secondaryColor = chroma(primaryColor).darken(0.25).hex();
                 }
-                let name = userData.name ? userData.name : userData.login;
-                userP.text(name); // check if user has available public profile name and display it otherwise display username
-                favLangP.text(`${user}'s favorite coding language is: ${topLangugage}`);
+                let name = userData.name ? userData.name : userData.login; // check if user has available public profile name and display it otherwise display username
+                userP.text(name); 
+                avatarA.attr('href', `https://github.com/${user}`);
+                favLangP.html(`<a href="https://github.com/${user}">${user}</a>'s favorite coding language is: <span id="language-span">${topLangugage}</span>`);
                 animations(profileDiv, primaryColor, secondaryColor);
                 oldUser = user;
             });

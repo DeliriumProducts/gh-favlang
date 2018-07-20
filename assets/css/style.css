@@ -67,6 +67,7 @@ button:focus {
 
 #search {
     font-size: 1.25rem;
+    font-family: 'Fjalla One';
     color: #ebebeb;
     background-color: #425568;
     color: #ebebeb !important;
@@ -78,6 +79,27 @@ button:focus {
     font-size: 1.5rem;
 }
 
+#language-span {
+    font-weight: 300;
+    text-decoration: underline;
+}
+
 #username {
     padding: 0 !important;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:visited,
+a:link,
+a:active {
+    color: inherit;
+    text-decoration: none !important;
+    font-weight: 300 !important;
+}
+
+a:hover {
+    font-weight: 600 !important;
 }
