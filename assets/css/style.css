@@ -65,7 +65,14 @@ button:focus {
     opacity: 0.5;
 }
 
+#forks-label {
+    margin-top: 5px;
+    display: block;
+    font-size: 1.25rem;
+}
+
 #search {
+    margin-top: -80px !important;
     font-size: 1.25rem;
     font-family: 'Fjalla One';
     color: #ebebeb;
