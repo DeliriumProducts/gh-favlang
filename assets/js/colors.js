@@ -1,3 +1,4 @@
+import "babel-polyfill";
 window.githubColors = {
     "1C Enterprise": {
         "color": "#814CCC",
