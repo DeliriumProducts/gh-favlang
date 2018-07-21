@@ -4,7 +4,7 @@
   "description": "A tool to see a user's favorite coding language.",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "parcel build index.html --public-url ./"
   },
   "repository": {
     "type": "git",
