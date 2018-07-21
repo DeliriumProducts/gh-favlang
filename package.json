@@ -1,0 +1,24 @@
+{
+  "name": "gh-favlang",
+  "version": "1.0.0",
+  "description": "A tool to see a user's favorite coding language.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeliriumProducts/gh-favlang.git"
+  },
+  "author": "Delirium Products",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DeliriumProducts/gh-favlang/issues"
+  },
+  "homepage": "https://github.com/DeliriumProducts/gh-favlang#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "cssnano": "^4.0.3"
+  }
+}
