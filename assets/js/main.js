@@ -10,6 +10,12 @@ $(document).ready(() => {
     $('#profile').hide();
 
     // EVENTS
+    $('#user').keypress(function(event) {
+        if (event.keyCode == 13) {
+            $('#search').trigger('click');
+        }
+    });
+
     $('#search').click(() => {
         const user = $('#user').val();
 
