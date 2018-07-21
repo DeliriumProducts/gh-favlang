@@ -1,3 +1,4 @@
+import "babel-polyfill";
 const colors = window.githubColors;
 
 let oldUser = "";
