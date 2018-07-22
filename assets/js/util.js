@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 // CONVERTS SVGS WHICH ARE IN IMG TAGS TO NORMAL SVGS
 $(function () {
     $('img.svg').each(function () {

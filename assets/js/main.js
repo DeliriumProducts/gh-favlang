@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-let util = require('./util.js');
+import { requestData, handleError, updateDOM, animations } from './util.js';
 
 let oldUser = "";
 let primaryColor;
@@ -9,7 +9,7 @@ let includeForks = false;
 
 $(document).ready(() => {
     // HIDING PROFILE DIV   
-    
+
     $('#profile').hide();
     $('#main').hide();
     $('#main').slideDown(500);
@@ -46,11 +46,11 @@ $(document).ready(() => {
 
 const getUserTopLang = async (user) => {
 
-    const { userData, reposData, error } = await util.requestData(user);
+    const { userData, reposData, error } = await requestData(user);
 
     // HANDLE ERROR IF THERE IS ANY
     if (typeof error == 'number') {
-        util.handleError(error);
+        handleError(error);
         oldUser = user;
         return;
     }
@@ -84,7 +84,7 @@ const getUserTopLang = async (user) => {
     if (languages.length > 0) {
         topLangugage = Object.keys(languages[0]);
     } else {
-        util.handleError(404);
+        handleError(404);
         oldUser = user;
         return;
     }
@@ -101,8 +101,8 @@ const getUserTopLang = async (user) => {
     const name = userData.name ? userData.name : userData.login; // if available, display the user's real name, rather than the username
     const favLang = `<a href="https://github.com/${user}">${user}</a>'s favorite coding language is: <span id="language-span">${topLangugage}</span>`;
 
-    util.updateDOM(avatarUrl, profileUrl, name, favLang);
-    util.animations(primaryColor, secondaryColor);
+    updateDOM(avatarUrl, profileUrl, name, favLang);
+    animations(primaryColor, secondaryColor);
     $('html, body').animate({ scrollTop: $('#profile').offset().top }, 'slow'); // scroll to profile div
     oldUser = user;
 }
