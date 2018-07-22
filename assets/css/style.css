@@ -72,7 +72,8 @@ button:focus {
 }
 
 #search {
-    margin-top: -80px !important;
+    /* margin-top: -80px !important; */
+    height: 6.5vh;
     font-size: 1.25rem;
     font-family: 'Fjalla One';
     color: #ebebeb;

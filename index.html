@@ -40,14 +40,17 @@
             </p>
 
             <div class="container text-center">
-                <input type="text" class="form-control lang-color-secondary" id="user" placeholder="Enter GitHub user!">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control lang-color-secondary" id="user" placeholder="Enter GitHub user!">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id='search'>Search!
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
                 <label id="forks-label" class="checkbox">
                     <input id="enable-forks" type="checkbox">Include forks?
                 </label>
-                <button class="btn" id="search">
-                    Search!
-                    <i class="fas fa-search"></i>
-                </button>
             </div>
 
             <div id="profile">
