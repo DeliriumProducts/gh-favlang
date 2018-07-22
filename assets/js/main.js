@@ -4,6 +4,7 @@ let oldUser = "";
 let primaryColor;
 let secondaryColor;
 let languages = [];
+let includeForks = false;
 
 $(document).ready(() => {
     // HIDING PROFILE DIV   
@@ -20,7 +21,7 @@ $(document).ready(() => {
     $('#search').click(() => {
         const user = $('#user').val();
 
-        if (user !== oldUser) {
+        if (user !== oldUser || includeForks != $('#enable-forks').is(':checked')) {
             $('#profile').slideUp(250, 'swing', async () => {
 
                 // RESET THE DOM ELEMENTS AND VARIABLES EVERYTIME 
@@ -65,7 +66,7 @@ const animations = () => {
     anime({
         targets: ".btn",
         backgroundColor: secondaryColor,
-        boxShadow: '0 0 10px ' + secondaryColor,
+        borderColor: secondaryColor,
         easing: 'easeOutQuart'
     });
     anime({
@@ -114,6 +115,7 @@ const getUserTopLang = async (user) => {
     // GETTING ALL USED LANGUAGES AMONG THE REPOS
     for (const repo of reposData) {
         if ($('#enable-forks').is(':checked') || repo.fork == false) {
+            includeForks = $('#enable-forks').is(':checked');
             let language = repo.language;
             if (language === null) {
                 continue;
