@@ -1,4 +1,6 @@
-window.githubColors = {
+import 'babel-polyfill';
+
+export const githubColors = {
     "1C Enterprise": {
         "color": "#814CCC",
         "url": "https://github.com/trending?l=1C-Enterprise"
