@@ -9,11 +9,12 @@ let includeForks = false;
 
 $(document).ready(() => {
     // HIDING PROFILE DIV   
+    
     $('#profile').hide();
     $('#main').hide();
     $('#main').slideDown(500);
 
-    $('html, body').animate({ scrollTop: $('#profile').offset().bottom }, 'slow'); //scroll to profile div
+    $('html, body').animate({ scrollTop: $('#logo').offset().top }, 'slow'); // scroll to logo in order to center view on page load
 
     // EVENTS
     $('#user').keypress(function (event) {
@@ -102,6 +103,6 @@ const getUserTopLang = async (user) => {
 
     util.updateDOM(avatarUrl, profileUrl, name, favLang);
     util.animations(primaryColor, secondaryColor);
-    $('html, body').animate({ scrollTop: $('#profile').offset().top }, 'slow'); //scroll to profile div
+    $('html, body').animate({ scrollTop: $('#profile').offset().top }, 'slow'); // scroll to profile div
     oldUser = user;
 }
