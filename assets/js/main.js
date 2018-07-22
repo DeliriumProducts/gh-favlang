@@ -8,7 +8,8 @@ let languages = [];
 $(document).ready(() => {
     // HIDING PROFILE DIV   
     $('#profile').hide();
-
+    $('#main').hide();
+    $('#main').slideDown(500);
     // EVENTS
     $('#user').keypress(function(event) {
         if (event.keyCode == 13) {
