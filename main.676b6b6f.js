@@ -304,4 +304,4 @@ module.exports=function(n){return new Promise(function(e,o){var r=document.creat
 },{}],0:[function(require,module,exports) {
 var b=require("AIOg");b.register("js",require("wp6Q"));
 },{}]},{},[0,"VxwS"], null)
-//# sourceMappingURL=main.676b6b6f.map
+//# sourceMappingURL=/gh-favlang/main.676b6b6f.map
