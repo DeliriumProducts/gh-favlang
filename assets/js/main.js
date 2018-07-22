@@ -12,8 +12,11 @@ $(document).ready(() => {
     $('#profile').hide();
     $('#main').hide();
     $('#main').slideDown(500);
+
+    $('html, body').animate({ scrollTop: $('#profile').offset().bottom }, 'slow'); //scroll to profile div
+
     // EVENTS
-    $('#user').keypress(function(event) {
+    $('#user').keypress(function (event) {
         if (event.keyCode == 13) {
             $('#search').trigger('click');
         }
@@ -99,5 +102,6 @@ const getUserTopLang = async (user) => {
 
     util.updateDOM(avatarUrl, profileUrl, name, favLang);
     util.animations(primaryColor, secondaryColor);
+    $('html, body').animate({ scrollTop: $('#profile').offset().top }, 'slow'); //scroll to profile div
     oldUser = user;
 }
