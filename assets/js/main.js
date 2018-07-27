@@ -8,7 +8,7 @@ let languages = [];
 let includeForks = false;
 
 $(document).ready(() => {
-    
+
     // HIDING PROFILE DIV   
     $('#profile').hide();
     $('#main').hide();
@@ -23,20 +23,50 @@ $(document).ready(() => {
 
             if (user !== oldUser || includeForks != $('#enable-forks').is(':checked')) {
                 $('#profile').slideUp(250, 'swing', async () => {
-    
+
                     // RESET THE DOM ELEMENTS AND VARIABLES EVERYTIME 
                     $('#username').text(``);
                     $('#fav-lang').html(``);
                     $('#avatar').attr('src', ``);
-    
+
                     languages = [];
                     primaryColor = '#425568';
                     secondaryColor = '#334251';
-    
+
                     getUserTopLang(user);
                 });
             }
         }
+    });
+
+    let toggleAbout = false;
+
+    $('#about').click(() => {
+        anime({
+            targets: "#main",
+            rotate: (toggleAbout == false) ? '8turn' : 0,
+            scale: [
+                { value: 0.25, duration: 500 },
+                { value: 1, duration: 500 },
+            ],
+            update: function () {
+                if (toggleAbout) {
+                    $('#main-content').hide();
+                    $('#about-content').show();
+                    $('#main').css('paddingBottom', 0);
+                } else {
+                    $('#main-content').show();
+                    $('#about-content').hide();
+                    $('#main').css('paddingBottom', '5%');
+
+                }
+            },
+            duration: 1000,
+            easing: 'easeOutQuart'
+        });
+
+        toggleAbout = !toggleAbout;
+
     });
 });
 

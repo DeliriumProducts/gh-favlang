@@ -16,7 +16,7 @@
         crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -31,37 +31,80 @@
 <body>
     <main>
         <div class="container text-center" id="main">
-            <div>
-                <img src="images/ghfavlang.svg" class="svg responsive-img" id="logo"></img>
-            </div>
-
-            <p class="lang-color-secondary" id="main-text">
-                Find your favorite coding language!
-            </p>
-
-            <div class="container text-center" id ="form-input">
-                <div class="input-group mb-3" id="input-wrapper">
-                    <input type="text" class="form-control lang-color-secondary" id="user" placeholder="Enter GitHub user!">
+            <div id="main-content">
+                <div>
+                    <img src="images/ghfavlang.svg" class="svg responsive-img" id="logo"></img>
                 </div>
-                <label id="forks-label" class="checkbox">
-                    <input id="enable-forks" type="checkbox">Include forks?
-                </label>
-            </div>
 
-            <div id="profile">
-                <a id="avatar-link">
-                    <img class="responsive-img" id="avatar">
-                </a>
-                <p class="lang-color-secondary" id="username"></p>
-                <p class="lang-color-primary" id="fav-lang"></p>
+                <p class="lang-color-secondary" id="main-text">
+                    Find your favorite coding language!
+                </p>
+
+                <div class="container text-center" id="form-input">
+                    <div class="input-group mb-3" id="input-wrapper">
+                        <input type="text" class="form-control lang-color-secondary" id="user" placeholder="Enter GitHub user!">
+                    </div>
+                    <label id="forks-label" class="checkbox">
+                        <input id="enable-forks" type="checkbox"> Include forks?
+                    </label>
+                </div>
+
+                <div id="profile">
+                    <a id="avatar-link">
+                        <img class="responsive-img" id="avatar">
+                    </a>
+                    <p class="lang-color-secondary" id="username"></p>
+                    <p class="lang-color-primary" id="fav-lang"></p>
+                </div>
+
+            </div>
+            <div id="about-content">
+                <div>
+                    <a href="https://github.com/delirumproducts">
+                        <img src="images/dplogo.png" id="dp-logo"></img>
+                    </a>
+                </div>
+
+                <p class="lang-color-primary" id="main-text">
+                    Made with
+                    <i class="fas fa-heart lang-color-secondary"></i> by
+                    <a href="https://github.com/delirumproducts">Delirium Products!</a>
+                </p>
+
+                <div class="row">
+                    <div class="col-md-4 lang-color-primary author">
+                        <a href="https://github.com/fr3fou">
+                            <img src="https://github.com/fr3fou.png" class="author-img">
+                            <br> Simo
+                            <br> Aleksandrov
+                        </a>
+                    </div>
+                    <div class="col-md-4 lang-color-primary author d-none d-sm-block d-sm-none d-md-block" id="dp-desc">
+                        Delirium Products is a team, which consists of 2 people - Simo Aleksandrov and Lyubo Lyubchev. One of our favorite chocolate
+                        deserts is called "Delirium", hence the name - Delirium Products. We are both students in the High
+                        School of Mathematics "Baba Tonka" in Ruse, Bulgaria. As of now we are only working with software
+                        development, but plan on moving to hardware, mobile and web development aswell.
+                    </div>
+                    <div class="col-md-4 lang-color-primary author">
+                        <a href="https://github.com/impzero">
+                            <img src="https://github.com/IMPZERO.png" class="author-img">
+                            <br> Lyubo
+                            <br> Lyubchev
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-success" id="source-code">
+                    Source code on
+                    <i class="fab fa-github"></i>
+                </button>
             </div>
         </div>
     </main>
-
-    <footer>
-
-    </footer>
-
+    <a href="#" id="about">
+        <i class="fas fa-angle-double-right"></i>
+        <br>
+    </a>
 </body>
 
 </html>

@@ -4,7 +4,8 @@
   "description": "A tool to see a user's favorite coding language.",
   "main": "index.html",
   "scripts": {
-    "deploy": "parcel build index.html --public-url /gh-favlang/"
+    "deploy": "parcel build index.html --public-url /gh-favlang/",
+    "start" : "parcel index.html"
   },
   "repository": {
     "type": "git",
