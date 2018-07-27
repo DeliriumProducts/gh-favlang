@@ -29,6 +29,7 @@ exports.updateDOM = (avatarSrc, profileLink, userText, favLangHtml) => {
 }
 
 exports.animations = (primaryColor, secondaryColor) => {
+    
     // PRIMARY
     anime({
         targets: ".lang-color-primary",
@@ -43,12 +44,6 @@ exports.animations = (primaryColor, secondaryColor) => {
     });
 
     // SECONDARY
-    anime({
-        targets: ".btn",
-        backgroundColor: secondaryColor,
-        borderColor: secondaryColor,
-        easing: 'easeOutQuart'
-    });
     anime({
         targets: ".lang-color-secondary",
         fill: secondaryColor,

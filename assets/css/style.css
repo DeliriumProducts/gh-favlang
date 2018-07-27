@@ -50,14 +50,22 @@ button:focus {
 }
 
 #user {
-    width: 60%;
     height: 6.5vh;
     font-size: 2vw;
     font-family: 'Fjalla One';
     text-align: center;
     display: block;
+}
+
+#input-wrapper{
+    width: 60%;
+    min-width: 30%;
     margin-right: auto;
     margin-left: auto;
+}
+
+#form-input{
+    margin-top: -5%;
 }
 
 #user::placeholder {
@@ -69,16 +77,6 @@ button:focus {
     margin-top: 5px;
     display: block;
     font-size: 1.25rem;
-}
-
-#search {
-    height: 6.5vh;
-    font-size: 1.25rem;
-    font-family: 'Fjalla One';
-    color: #ebebeb;
-    background-color: #425568;
-    border-color: #334251;
-    color: #ebebeb !important;
 }
 
 #fav-lang {

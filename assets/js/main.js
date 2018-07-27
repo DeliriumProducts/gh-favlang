@@ -8,8 +8,8 @@ let languages = [];
 let includeForks = false;
 
 $(document).ready(() => {
+    
     // HIDING PROFILE DIV   
-
     $('#profile').hide();
     $('#main').hide();
     $('#main').slideDown(500);
@@ -19,29 +19,25 @@ $(document).ready(() => {
     // EVENTS
     $('#user').keypress(function (event) {
         if (event.keyCode == 13) {
-            $('#search').trigger('click');
+            const user = $('#user').val();
+
+            if (user !== oldUser || includeForks != $('#enable-forks').is(':checked')) {
+                $('#profile').slideUp(250, 'swing', async () => {
+    
+                    // RESET THE DOM ELEMENTS AND VARIABLES EVERYTIME 
+                    $('#username').text(``);
+                    $('#fav-lang').html(``);
+                    $('#avatar').attr('src', ``);
+    
+                    languages = [];
+                    primaryColor = '#425568';
+                    secondaryColor = '#334251';
+    
+                    getUserTopLang(user);
+                });
+            }
         }
     });
-
-    $('#search').click(() => {
-        const user = $('#user').val();
-
-        if (user !== oldUser || includeForks != $('#enable-forks').is(':checked')) {
-            $('#profile').slideUp(250, 'swing', async () => {
-
-                // RESET THE DOM ELEMENTS AND VARIABLES EVERYTIME 
-                $('#username').text(``);
-                $('#fav-lang').html(``);
-                $('#avatar').attr('src', ``);
-
-                languages = [];
-                primaryColor = '#425568';
-                secondaryColor = '#334251';
-
-                getUserTopLang(user);
-            });
-        }
-    })
 });
 
 const getUserTopLang = async (user) => {
