@@ -7,7 +7,7 @@ let secondaryColor;
 let languages = [];
 let includeForks = false;
 
-$(document).ready(() => {
+$(document).ready(async () => {
 
     // HIDING PROFILE DIV   
     $('#profile').hide();
@@ -15,6 +15,13 @@ $(document).ready(() => {
     $('#main').slideDown(500);
 
     $('html, body').animate({ scrollTop: $('#logo').offset().top }, 'slow'); // scroll to logo in order to center view on page load
+
+    // GET AUTHORS' FAV LANGUAGE
+    let fr3fouTopLang = await getAuthorTopLang('fr3fou');
+    let impzeroTopLang = await getAuthorTopLang('impzero');
+
+    $('#fr3fou-fav-lang').append(`<br><p id="fav-lang">Favorite coding language: ${fr3fouTopLang}</p>`);
+    $('#impzero-fav-lang').append(`<br><p id="fav-lang">Favorite coding language: ${impzeroTopLang}</p>`);
 
     // EVENTS
     $('#user').keypress(function (event) {
@@ -131,4 +138,46 @@ const getUserTopLang = async (user) => {
     animations(primaryColor, secondaryColor);
     $('html, body').animate({ scrollTop: $('#profile').offset().top }, 'slow'); // scroll to profile div
     oldUser = user;
+}
+
+let getAuthorTopLang = async (user) => {
+    const { userData, reposData, error } = await requestData(user);
+
+    // HANDLE ERROR IF THERE IS ANY
+    if (typeof error == 'number') {
+        return;
+    }
+
+    // GETTING ALL USED LANGUAGES AMONG THE REPOS
+    for (const repo of reposData) {
+        if (repo.fork == false) {
+            let language = repo.language;
+            if (language === null) {
+                continue;
+            }
+            let index = languages.findKey(language);
+            if (index != undefined) {
+                languages[index][language]++;
+            } else {
+                languages.push({ [language]: 1 });
+            }
+        }
+    }
+
+    // SORTING THE LANGUAGE ARRAY BY DESCENDING ORDER
+    languages = languages.sort((a, b) => {
+        let first = Object.values(a);
+        let second = Object.values(b);
+        return second - first;
+    });
+
+    // FIRST ELEMENT IS THE MOST USED LANGUAGE
+    let topLangugage;
+    if (languages.length > 0) {
+        topLangugage = Object.keys(languages[0]);
+    } else {
+        oldUser = user;
+        return;
+    }
+    return topLangugage;
 }

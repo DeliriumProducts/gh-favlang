@@ -29,7 +29,7 @@ exports.updateDOM = (avatarSrc, profileLink, userText, favLangHtml) => {
 }
 
 exports.animations = (primaryColor, secondaryColor) => {
-    
+
     // PRIMARY
     anime({
         targets: ".lang-color-primary",

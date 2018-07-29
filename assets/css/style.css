@@ -72,7 +72,6 @@ button:focus {
     font-size: 5em;
 }
 
-
 #main {
     z-index: 999 !important;
     font-size: 5rem;
@@ -127,7 +126,7 @@ button:focus {
 
 #fav-lang {
     padding: 0 !important;
-    margin-top: -10px;
+    margin-top: -5px;
     font-size: 1.5rem;
 }
 
