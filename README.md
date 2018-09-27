@@ -5,6 +5,7 @@
   GitHub Favorite Language
   <br>
   <br>
+  <img src="https://forthebadge.com/images/badges/built-with-love.svg"/>
 </h1>
 
 Ever wondered what is someone's favorite programming language?
