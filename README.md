@@ -1,3 +1,4 @@
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 <h1 align="center">
   <br>
      <img width="256" height="256" src=images/ghfavlang.svg/>
@@ -5,7 +6,6 @@
   GitHub Favorite Language
   <br>
   <br>
-  <img src="https://forthebadge.com/images/badges/built-with-love.svg"/>
 </h1>
 
 Ever wondered what is someone's favorite programming language?
